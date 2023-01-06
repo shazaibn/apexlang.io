@@ -72,7 +72,7 @@ This visitor creates the initial entry point (`main.go`) for your application an
 generates:
   cmd/main.go:
     ifNotExists: true
-    module: '@apexlang/codegen/go'
+    module: 'https://deno.land/x/apex_codegen@v0.1.2/go/mod.ts'
     visitorClass: MainVisitor
     config:
       package: myapp
@@ -114,14 +114,14 @@ This visitor will stub out an implementation for the configured interfaces leavi
 generates:
   pkg/myapp/services.go:
     ifNotExists: true
-    module: '@apexlang/codegen/go'
+    module: 'https://deno.land/x/apex_codegen@v0.1.2/go/mod.ts'
     visitorClass: ScaffoldVisitor
     config:
       types:
         - service # any interfaces with @service
   pkg/myapp/repositories.go:
     ifNotExists: true
-    module: '@apexlang/codegen/go'
+    module: 'https://deno.land/x/apex_codegen@v0.1.2/go/mod.ts'
     visitorClass: ScaffoldVisitor
     config:
       names:
@@ -150,7 +150,7 @@ This visitor is used to create a REST/HTTP wrapper around `@service` interfaces 
 ```yaml
 generates:
   pkg/myapp/interfaces.go:
-    module: '@apexlang/codegen/go'
+    module: 'https://deno.land/x/apex_codegen@v0.1.2/go/mod.ts'
     visitorClass: FiberVisitor
     config:
       package: myapp
@@ -176,7 +176,7 @@ This visitor is used to create a gRPC wrapper around `@service` interfaces using
 ```yaml
 generates:
   pkg/myapp/interfaces.go:
-    module: '@apexlang/codegen/go'
+    module: 'https://deno.land/x/apex_codegen@v0.1.2/go/mod.ts'
     visitorClass: GRPCVisitor
     config:
       package: myapp
